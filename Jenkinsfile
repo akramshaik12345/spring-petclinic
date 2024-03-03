@@ -8,7 +8,7 @@ pipeline {
         }
         stage ("build") {
             steps {
-                bat 'mvn compile'
+                bat 'mvn -f C:\\Users\\vurut\\Desktop\\New folder\\spring-petclinic\\pom.xml compile'
             }
         }
     }
