@@ -1,12 +1,8 @@
 pipeline {
     agent any
-
     stages {
-        stage("cleanup") {
-            steps {
-                cleanWs()
-            }
-        }
+
+    
         
         stage("code checkout") {
             steps {
@@ -14,17 +10,9 @@ pipeline {
             }
         }
         
-        stage("build") {
-            steps {
-                bat 'mvn -f "C:/Users/vurut/Desktop/New folder/spring-petclinic/pom.xml" compile'
-            }
-        }
+       
     }
 
-    post {
-        always {
-            cleanWs()
-        }
-    }
+    
 }
 
