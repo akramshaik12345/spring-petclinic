@@ -11,7 +11,8 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
-        stage('SonarQube Analysis') {
+         stage('SonarQube Analysis') {
+             
             
             
             // Define the Maven tool named 'Default Maven'
