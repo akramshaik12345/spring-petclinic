@@ -12,11 +12,11 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            tools {
+            
             
             // Define the Maven tool named 'Default Maven'
             def mvn = 'Default Maven'
-            }
+            
             steps {
             // Execute withSonarQubeEnv to set up SonarQube environment variables
             withSonarQubeEnv("SonarQube") {
