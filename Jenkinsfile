@@ -14,7 +14,7 @@ pipeline {
         stage('SonarQube Analysis') {
             environment {
                 // Define the Maven tool named 'Default Maven'
-                MVN_HOME = tool 'Default Maven'
+                M2_HOME = tool 'Default Maven'
             }
             steps {
                 // Execute withSonarQubeEnv to set up SonarQube environment variables
