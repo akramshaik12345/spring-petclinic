@@ -15,7 +15,7 @@ pipeline {
             
             
             // Define the Maven tool named 'Default Maven'
-            def mvn = 'Default Maven'
+            def mvn = tool 'Default Maven'
             
             steps {
             // Execute withSonarQubeEnv to set up SonarQube environment variables
