@@ -20,7 +20,7 @@ pipeline {
                 // Execute withSonarQubeEnv to set up SonarQube environment variables
                 withSonarQubeEnv("SonarQube") {
                     // Run Maven with SonarQube analysis
-                    sh "${M2_HOME}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=spring -Dsonar.projectName='spring'"
+                    bat "%{M2_HOME}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=spring -Dsonar.projectName='spring'"
                 }
             }
         }
