@@ -12,14 +12,15 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
+            // Define the Maven tool named 'Maven' at the stage level
+            tools {
+                maven 'Maven'
+            }
             steps {
-                // Define the Maven tool named 'Maven' within this stage
-                def mvn = tool 'Maven'
-                
                 // Execute withSonarQubeEnv to set up SonarQube environment variables
                 withSonarQubeEnv("SonarQube") {
                     // Run Maven with SonarQube analysis using the defined Maven tool
-                    bat "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=spring -Dsonar.projectName='spring'"
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=spring -Dsonar.projectName='spring'"
                 }
             }
         }
