@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            def mvn = tool 'M2_HOME';
+            def mvn = tool 'Maven';
           
 
                 // Execute withSonarQubeEnv to set up SonarQube environment variables
