@@ -12,14 +12,15 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
+            def mvn = tool 'M2_HOME';
           
-            steps {
+
                 // Execute withSonarQubeEnv to set up SonarQube environment variables
                 withSonarQubeEnv("SonarQube") {
                     // Run Maven with SonarQube analysis
-                    bat "${M2_HOME}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=spring -Dsonar.projectName='spring'"
+                    bat "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=spring -Dsonar.projectName='spring'"
                 }
             }
         }
     }
-}
+
